@@ -1,4 +1,5 @@
 <?php
+	namespace Medoo;
 	class database{
 		private static $initialized = false;
 		private static $pdo;
