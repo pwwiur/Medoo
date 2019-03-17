@@ -36,7 +36,7 @@ PHP 5.4+ and PDO extension installed
 
 Add Medoo to composer.json configuration file.
 ```
-$ composer require catfan/Medoo
+$ composer require pwwiur/Medoo
 ```
 
 And update the composer
@@ -49,10 +49,10 @@ $ composer update
 require 'vendor/autoload.php';
 
 // Using Medoo namespace
-use Medoo\Medoo;
+use Medoo\database;
 
 // Initialize
-$database = new Medoo([
+database::init([
     'database_type' => 'mysql',
     'database_name' => 'name',
     'server' => 'localhost',
@@ -61,12 +61,12 @@ $database = new Medoo([
 ]);
 
 // Enjoy
-$database->insert('account', [
+database::insert('account', [
     'user_name' => 'foo',
     'email' => 'foo@bar.com'
 ]);
 
-$data = $database->select('account', [
+database::select('account', [
     'user_name',
     'email'
 ], [
